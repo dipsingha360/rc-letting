@@ -1,5 +1,5 @@
 @import "variables";
-@import "mixins.scss";
+@import "mixins";
 
 html {
   font-size: 100%;
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 10px 10px;
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-size: $font-med;
@@ -31,8 +31,14 @@ a:hover {
 //flax-box
 .flax {
   display: flex;
+  &-jc-st {
+    justify-content: start;
+  }
   &-jc-sb {
     justify-content: space-between;
+  }
+  &-jc-sa {
+    justify-content: space-around;
   }
   &-jc-c {
     justify-content: center;
@@ -50,5 +56,7 @@ a:hover {
 }
 
 .hide-for-desktop {
-  //hide for dasktop viewport widts
+  @include breakepoints-up(large) {
+    display: none;
+  }
 }
